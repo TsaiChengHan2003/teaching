@@ -1,18 +1,21 @@
-const initialState = {
+export const initialState = {
   'data': [],
-  'totalPage': '',
-  'nowPage': '',
+  'totalPage': 1,
+  'nowPage': 0,
   'isModalShow': false,
+  'formMethod': () => {},
 };
 
 export const DataTableReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case 'SET_DATA':
+      console.log(action.payload);
       return {
         ...state,
         'data': action.payload
       };
     case 'SET_TOTAL_PAGE':
+      console.log(action.payload);
       return {
         ...state,
         'totalPage': action.payload

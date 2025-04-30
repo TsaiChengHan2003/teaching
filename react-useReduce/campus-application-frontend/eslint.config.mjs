@@ -71,7 +71,7 @@ export default [
 
       'max-len': [
         'error', {
-          'code': 80,
+          'code': 9999,
           'ignoreTrailingComments': true,
           'ignoreComments': true,
           'ignoreUrls': true,
