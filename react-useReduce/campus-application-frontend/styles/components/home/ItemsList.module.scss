@@ -1,0 +1,86 @@
+@use "sass:math";
+@import '@/styles/base/mixin';
+
+.container {
+    padding: 2% 20%;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include X-Large {
+        padding: 2% 12%;
+    }
+
+    @include Large{
+        padding: 2% 10%;
+    }
+
+    .item {
+        box-sizing: border-box;
+        width: math.div(100%, 3);
+        padding: 1rem;
+
+        @include Large {
+            width: 50%;
+        }
+        
+        @include Small {
+            width: 100%;
+        }
+
+        .content {
+            padding: 1rem;
+            border-radius: 10px;
+            max-height: 300px;
+            min-height: 300px;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+
+            .cover {
+                position: relative;
+                width: 100%;
+                height: 150px;
+                overflow: hidden;
+                border-radius: 10px;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: auto;
+                    transition: all 0.5s ease;
+                }
+            }
+
+            &:hover .cover img {
+                scale: 1.1;
+            }
+
+            .title {
+                margin: 1rem 0;
+                font-weight: bold;
+            }
+
+            .description {
+                margin: 1rem 0;
+                height: 10%;
+            }
+
+            button {
+                outline: none;
+                width: 100%;
+                color: #466b95;
+                background: transparent;
+                border: 1px solid #466b95;
+                border-radius: 50px;
+                padding: 0.5rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: #466b95;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}

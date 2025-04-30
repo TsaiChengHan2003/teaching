@@ -1,0 +1,230 @@
+@import '../../base/extends';
+@import '../../base/mixin';
+@import '../../base/variables';
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  width: 92vw;
+  height: fit-content;
+  padding: 0 5vw;
+  background-color: $admin-title-color;
+
+  @include X-Large {
+    height: 5vh;
+    padding: 10px 5vw;
+    flex-direction: row-reverse;
+  }
+
+  section {
+    width: 28vw;
+    color: white;
+    letter-spacing: 2px;
+    font-size: $admin-fontsize-navbar-option;
+
+    .barButton {
+      cursor: pointer;
+      display: none;
+      font-size: 25px;
+      @include X-Large {
+        display: block;
+        float: right;
+      }
+    }
+
+    .navLink {
+      display: flex;
+      justify-content: space-around;
+      font-size: 18px;
+
+      li {
+        @extend %flex-center;
+        height: fit-content;
+        cursor: pointer;
+        width: 9vw;
+
+        a {
+          @extend %flex-center;
+          line-height: 5vh;
+          padding: 20px 0;
+          width: 100%;
+          color: white;
+          text-decoration: none;
+
+          p {
+            display: flex;
+            font-size:17px;
+            align-items: center;
+            border-bottom: 2.5px solid transparent;
+          }
+
+          p:hover {
+            transition: ease 0.15s;
+            color:$admin-button-edit-color ;
+            border-bottom: 2.5px solid $admin-button-edit-color;
+          }
+        }
+      }
+      .active{
+        color:$admin-button-edit-color ;
+        border-bottom: 2.5px solid $admin-button-edit-color;
+      }
+
+      .mainPoint {
+        p {
+          border-bottom: 2.5px solid white;
+        }
+      }
+
+      .userAccount {
+        position: relative;
+        .popup {
+          cursor: auto;
+          opacity: 0;
+          border-radius: 10px;
+          color: $admin-sheet-font-color;
+          border: 1px solid $admin-title-color;
+          height: 0vh;
+          width: 15vw;
+          padding: 0;
+          background-color: white;
+          position: absolute;
+          left: -10vw;
+          top: 9vh;
+          p {
+            display: none;
+            line-height: 30px;
+            
+          }
+
+          button {
+            position: absolute;
+            left: 65%;
+            bottom: 10%;
+            cursor: pointer;
+            opacity: 0;
+            border-radius: 5px;
+            border: none;
+            width: 80px;
+            height: 35px;
+            background-color: $admin-title-color;
+            color: white;
+            float: right;
+          }
+
+          .notifyBtn {
+            margin-right: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        &:hover {
+          .popup {
+            padding: 2vh 1vw;
+            height: 10vh;
+            display: block;
+            transition: 0.5s;
+            opacity: 1;
+            p {
+              transition: 1.5s;
+              display: block;
+            }
+            button {
+              transition:ease  0.2s;
+              opacity: 1;
+              background-color: $admin-button-edit-color;
+              filter: brightness(0.95);
+              color: black;
+              border: 1px solid transparent;
+
+              &:hover{
+                transform: scale(1.05);
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+  .navspaces {
+    display: none;
+    @include X-Large {
+      display: block;
+    }
+  }
+  .button {
+    width: fit-content;
+    @include X-Large {
+      display: none;
+    }
+  }
+
+  .mainTitle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 35vw;
+    min-width: 280px;
+    gap: 10px;
+    cursor: pointer;
+
+    h1 {
+      margin-left: 20px;
+      font-size: 32px;
+      white-space: nowrap;
+
+      @include Small {
+        margin-left: 10px;
+      }
+
+      @include X-Small {
+        margin-left: 5px;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      border-radius: 5px;
+      border: 2px solid white;
+      width: 100px;
+      height: 35px;
+      background-color: $admin-title-color;
+      color: white;
+
+      @include X-Small {
+        width: 80px;
+        height: 30px;
+        font-size: 12px;
+      }
+    }
+
+    @include Small {
+      width: 65vw;
+    }
+
+    @include X-Small {
+      width: 75vw;
+    }
+
+    @include X-Large {
+      justify-content: space-between;
+      width: 30vw;
+    }
+
+    @include Large {
+      width: 30vw;
+    }
+
+    @include Medium {
+      justify-content: space-between;
+      width: 40vw;
+    }
+  }
+}

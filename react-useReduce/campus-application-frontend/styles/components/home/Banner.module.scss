@@ -1,0 +1,45 @@
+@import '@/styles/base/mixin';
+
+.container {
+    position: relative;
+    background: #1b416c;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20%;
+
+    h1 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #ffffff;
+
+        @include Small {
+            font-size: 28px;
+        }
+    }
+
+    h2 {
+        font-size: 20px;
+        color: #dfdfdf;
+        margin-top: 1rem;
+    }
+}
+
+.customShapeDividerTop {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+
+    svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 78px;
+    }
+
+    .shapeFill {
+        fill: #1b416c;
+    }
+}

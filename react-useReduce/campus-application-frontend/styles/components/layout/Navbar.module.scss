@@ -1,0 +1,39 @@
+.container {
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    padding: 1rem 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    background-color: #1b416c;
+
+    .btnGroup {
+        button {
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            border: none;
+            margin-left: 1rem;
+        }
+
+        .loginBtn {
+            background-color: #fba440;
+            color: #ffffff;
+
+            &:hover {
+                background-color: #e0933b;
+            }
+        }
+
+        .signinBtn {
+            background-color: #eeeeee;
+
+            &:hover {
+                background-color: #d4d4d4;
+            }
+        }
+    }
+}

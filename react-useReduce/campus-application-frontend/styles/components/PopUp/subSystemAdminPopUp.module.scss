@@ -1,0 +1,185 @@
+@import "../../base/variables";
+@import "../../base/mixin";
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $admin-popup-background;
+    border-radius: 15px;
+    font-weight: 600;
+    padding: 1%;
+    width: 60%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 4fr 0fr 7fr;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      margin: 1% 4% 1% 1%;
+      cursor: pointer;
+
+      .upload {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        color: grey;
+        font-size: 20px;
+
+        .imagePreview {
+          max-width: 100%;
+        }
+
+        .plus {
+          .iconBig {
+            font-size: 250px;
+            color: #c9c9c9;
+          }
+        }
+      }
+    }
+
+    .divider {
+      border-left: 3px dashed #373c54;
+    }
+
+    .right {
+      .closeIcon {
+        background-color: $admin-popup-background;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        display: flex;
+        justify-content: end;
+
+        .close {
+          color: #000;
+          font-size: 60px;
+          border-radius: 50%;
+
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+            transition: ease 0.1s;
+          }
+        }
+      }
+
+      .textcont {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .switchRow {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 90%;
+          margin: 10px 0 20px;
+          
+          label {
+            font-size: 18px;
+            color: $admin-title-color;
+            cursor: pointer;
+            margin-right: 10px;
+          }
+        }
+
+        p {
+          color: $admin-title-color;
+          width: 90%;
+          font-size: 20px;
+        }
+
+        input,
+        textarea {
+          width: 90%;
+          height: 45px;
+          font-size: 20px;
+          margin: 10px 0 20px;
+          border: none;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) inset,
+            0 2px 6px rgba(0, 0, 0, 0.08);
+          border-radius: 7px;
+          padding: 1%;
+        }
+
+        textarea {
+          height: 15vh;
+          resize: none;
+        }
+
+        .addSubSystem {
+          font-weight: 600;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 90%;
+          height: 60px;
+          margin: 4% 0%;
+          font-size: 20px;
+          background-color: $admin-button-edit-color;
+          border-radius: 15px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16),
+            0 2px 3px rgba(0, 0, 0, 0.1);
+          border: none;
+          cursor: pointer;
+
+          &:hover {
+            transition: ease 0.1s;
+            filter: brightness(90%);
+            transform: scale(1.01);
+          }
+
+          .iconSmall {
+            padding-right: 1%;
+            font-size: 20px;
+            padding-top: 0.2%;
+          }
+        }
+      }
+    }
+  }
+
+  @include X-Large {
+    .box {
+      display: grid;
+      grid-template-columns: 5fr 0fr 5fr;
+    }
+  }
+
+  @include Medium {
+    .box {
+      display: flex;
+      flex-direction: column-reverse;
+      max-height: 80vh;
+      overflow-y: scroll;
+    }
+  }
+
+  @include Small {
+    .box {
+      width: 75vw;
+    }
+  }
+  @include X-Small {
+    .box {
+      width: 90%;
+    }
+  }
+}

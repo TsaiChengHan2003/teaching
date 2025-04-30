@@ -1,0 +1,228 @@
+@import '../../base/extends';
+@import '../../base/variables';
+@import '../../base/mixin';
+
+.sideBar {
+  position: fixed;
+  top:0;
+  z-index: 90;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  right: 0;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  .navLink {
+    display: none;
+  }
+
+  ul {
+    width: 100%;
+
+    .ready {
+      background-color: rgba(255, 255, 255, 0.75);
+    }
+
+    li { 
+      text-align: center;
+      width: 100%;
+      height: fit-content;
+      font-size: 22px;
+      cursor: pointer;
+      a{
+        text-decoration: none;
+      }
+
+      .item {
+        color: $admin-sheet-font-color;
+        filter: brightness(0.9);
+        width: 100%;
+
+        @include X-Large {
+          line-height: 7vh;
+        }
+
+        @include Medium {
+          line-height: 10vh;
+        }
+
+        @include Small {
+          font-size: 20px;
+          width: 30vw;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.75);
+        box-shadow: rgba(0, 0, 0, 0.22) 0px 10px 12px;
+
+        p{
+          color: $admin-button-edit-color;  
+        }
+      }
+    }
+  }
+
+  .userSection {
+    margin-top: auto;
+    padding: 1.5rem 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+    .userInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .userName {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 16px;
+        color: $admin-sheet-font-color;
+        filter: brightness(0.9);
+
+        svg {
+          margin-right: 0.75rem;
+          color: $admin-button-edit-color;
+        }
+      }
+
+      .userEmail {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.7);
+        filter: brightness(0.9);
+
+        svg {
+          margin-right: 0.75rem;
+          color: $admin-button-edit-color;
+        }
+      }
+
+      .notifyBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.25rem;
+        margin-top: 0.1rem;
+        background-color: $admin-title-color;
+        color: white;
+        border: none;
+        border-radius: 0.25rem;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        justify-content: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+          background-color: darken($admin-button-edit-color, 10%);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        &:active {
+          transform: translateY(0);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      .userButton {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 0.75rem;
+        margin-top: 0.1rem;
+        background-color: $admin-title-color;
+        color: white;
+        border: none;
+        border-radius: 0.25rem;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        justify-content: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+          background-color: darken($admin-button-edit-color, 25%);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        &:active {
+          transform: translateY(0);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        svg {
+          margin-right: 0.75rem;
+        }
+      }
+    }
+
+    @include X-Large {
+      padding: 1.5rem;
+    }
+
+    @include Small {
+      padding: 1.5rem 1rem;
+    }
+  }
+
+  .copyRight {
+    @extend %flex-center;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  @include X-Large {
+    width: 25vw;
+    height: 90vh;
+    padding-top: 10vh;
+
+    .navLink {
+      display: block;
+    }
+  }
+
+  @include Large {
+    width: 30vw;
+  }
+
+  @include Medium {
+    width: 35vw;
+  }
+
+  @include Small {
+    width: 45vw;
+    font-size: 16px;
+  }
+
+  @include X-Small {
+    width: 55vw;
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 89;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
